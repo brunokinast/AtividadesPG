@@ -7,12 +7,13 @@
             "args": [
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "${file}",
+                "${fileDirname}\\*.cpp",
                 "-fdiagnostics-color=always",
                 "-g",
                 // Arquivos necessários para a compilação
                 "-I${workspaceFolder}\\Dependencies\\include",
                 "${workspaceFolder}\\Dependencies\\src\\glad.c",
+                "${workspaceFolder}\\Dependencies\\include\\stb\\stb_image.cpp",
                 "${workspaceFolder}\\Dependencies\\bin\\libglfw3.a",
                 "-lgdi32"
             ],

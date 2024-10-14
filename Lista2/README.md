@@ -1,0 +1,2 @@
+3. **Utilizando a câmera 2D do exercício anterior, desenhe algo na tela. O que acontece quando posicionamos os objetos? Por que é útil essa configuração?**
+Isso é útil para sistemas que trabalham diretamente com coordenadas de tela, pois facilita o desenho de objetos com base em unidades de pixel.
