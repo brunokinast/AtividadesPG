@@ -8,6 +8,16 @@ SpriteRenderer::SpriteRenderer(Texture *texture, vec2 sheetSize, vec3 position, 
     initRenderData();
 }
 
+vec3 SpriteRenderer::getSize()
+{
+    return vec3(texture->GetWidth() / sheetSize.x, texture->GetHeight() / sheetSize.y, 0);
+}
+
+vec2 SpriteRenderer::getSheetSize()
+{
+    return sheetSize;
+}
+
 void SpriteRenderer::playAnimation(int row, bool loop)
 {
     if (currentFrame.y != row)
@@ -58,6 +68,11 @@ void SpriteRenderer::render(GLuint shaderID)
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
     glBindVertexArray(0);
+}
+
+vec3 SpriteRenderer::getPosition()
+{
+    return position;
 }
 
 void SpriteRenderer::updatePosition(vec3 position)

@@ -9,13 +9,13 @@ using namespace glm;
 class GameObject
 {
 public:
-    GameObject(vec3 position, SpriteRenderer *renderer);
+    GameObject(SpriteRenderer *renderer);
     void render(GLuint shaderID);
     vec3 getPosition();
+    vec3 getSize();
+    bool isColliding(GameObject *other);
+    void updatePosition(vec3 position);
 
 protected:
     SpriteRenderer *renderer;
-    vec3 position;
-
-    void updatePosition(vec3 position);
 };

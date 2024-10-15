@@ -3,8 +3,9 @@
 #include "GameObject.h"
 #include <glm/glm.hpp>
 #include <glfw3.h>
+#include <functional>
 
-using namespace glm;
+using namespace std;
 
 struct keyInfo
 {
@@ -15,10 +16,12 @@ struct keyInfo
 class Player : public GameObject
 {
 public:
-    Player(vec3 position);
+    Player(vec3 position, function<void(vec3)> createBullet, vec4 limits);
     void handleInput(keyInfo keys[]);
 
 private:
+    const vec4 limits;
     const float speed = 1.4f;
+    function<void(vec3)> createBullet;
     void shoot(int dx, int dy);
 };

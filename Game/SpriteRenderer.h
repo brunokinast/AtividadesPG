@@ -15,7 +15,10 @@ public:
     SpriteRenderer(Texture* texture, vec2 sheetSize, vec3 position, float scale, float fps);
     void playAnimation(int row, bool loop);
     void render(GLuint shaderID);
+    vec3 getPosition();
+    vec3 getSize();
     void updatePosition(vec3 position);
+    vec2 getSheetSize();
 
 private:
     Texture* texture;
