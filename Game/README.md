@@ -3,7 +3,6 @@
 ## Overview
 This project is a simple game developed in C++. The game includes various objects such as players, enemies, bullets, and textures. The game logic is implemented in multiple C++ files.
 
-
 ## Files Description
 
 - **Bullet.cpp / Bullet.h**: Implements the bullet logic.
@@ -14,6 +13,7 @@ This project is a simple game developed in C++. The game includes various object
 - **Player.cpp / Player.h**: Implements the player logic.
 - **SpriteRenderer.cpp / SpriteRenderer.h**: Handles rendering of sprites.
 - **Texture.cpp / Texture.h**: Manages texture loading and binding.
+- **SoundPlayer.cpp / SoundPlayer.h**: Handles sound effects.
 - **Textures/**: Directory containing texture files.
 
 ## How to Build
