@@ -10,6 +10,12 @@ Player::Player(vec3 position, function<void(vec3)> createBullet, vec4 limits)
 {
 }
 
+vec3 Player::getSize() 
+{
+    // Make the player a bit smaller than the sprite to make it easier
+    return renderer->getSize() * 0.45f;
+}
+
 void Player::handleInput(keyInfo keys[])
 {
     vec3 position = this->getPosition();

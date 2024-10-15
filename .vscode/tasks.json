@@ -16,6 +16,8 @@
                 "${workspaceFolder}\\Dependencies\\include\\text\\text.cpp",
                 "${workspaceFolder}\\Dependencies\\include\\stb\\stb_image.cpp",
                 "${workspaceFolder}\\Dependencies\\bin\\libglfw3.a",
+                "${workspaceFolder}\\Dependencies\\bin\\SDL2.dll",
+                "${workspaceFolder}\\Dependencies\\bin\\SDL2_mixer.dll",
                 "-lgdi32"
             ],
             "options": {

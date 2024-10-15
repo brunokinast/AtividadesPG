@@ -18,6 +18,7 @@ class Player : public GameObject
 public:
     Player(vec3 position, function<void(vec3)> createBullet, vec4 limits);
     void handleInput(keyInfo keys[]);
+    vec3 getSize() override;
 
 private:
     const vec4 limits;

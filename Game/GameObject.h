@@ -12,7 +12,7 @@ public:
     GameObject(SpriteRenderer *renderer);
     void render(GLuint shaderID);
     vec3 getPosition();
-    vec3 getSize();
+    virtual vec3 getSize();
     bool isColliding(GameObject *other);
     void updatePosition(vec3 position);
 

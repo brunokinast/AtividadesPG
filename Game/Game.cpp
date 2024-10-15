@@ -1,13 +1,12 @@
-#include "Player.h"
-#include "Enemy.h"
-#include "Bullet.h"
 #include <vector>
 #include <string>
 #include <chrono>
 #include <random>
 #include <text/text.h>
-
-using namespace std;
+#include "Player.h"
+#include "Enemy.h"
+#include "Bullet.h"
+#include "SoundPlayer.h"
 
 class Game
 {
@@ -19,6 +18,9 @@ public:
         player = new Player(vec3(width / 2, height / 2, 0), bind(&Game::createBullet, this, placeholders::_1), vec4(32, 32, width - 32, height - 32));
         scoreText = add_text("Pts: 0", -0.95f, 1.01f, 25, 0.0f, 0.0f, 0.0f, 1.0f);
         lastScoreText = add_text("Last score: 0", -0.3f, -0.3f, 25, 0.0f, 0.0f, 0.0f, 1.0f);
+
+        SoundPlayer::Initialize();
+        SoundPlayer::Play("Sounds/background.wav", true);
 
         // Create boundary boxes
         Texture *texture = new Texture("Textures/box.png");
@@ -144,6 +146,7 @@ private:
             if (player->isColliding(enemy))
             {
                 lastScore = enemiesKilled;
+                SoundPlayer::Play("Sounds/die.wav");
                 resetGame();
                 return;
             }
@@ -165,6 +168,8 @@ private:
                 {
                     if ((*bullet)->isColliding(*enemy))
                     {
+                        SoundPlayer::Play("Sounds/die.wav");
+
                         delete *bullet;
                         bullet = bullets.erase(bullet);
 
@@ -191,6 +196,7 @@ private:
 
     void createBullet(vec3 direction)
     {
+        SoundPlayer::Play("Sounds/shoot.wav");
         bullets.push_back(new Bullet(player->getPosition(), direction));
     }
 
